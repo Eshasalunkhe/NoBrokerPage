@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoBroker Property Site</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .main-heading {
+        color: #adb5bd;
+    }
+
+    .search-section-wrapper {
+      max-width: 1000px; 
+      margin: 0 auto;
+      background-color: #fff; 
+      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); 
+      border-radius: .25rem; 
+      overflow: hidden; 
+    }
+
+    .nav-tabs {
+      border-bottom: none; 
+      margin-bottom: 0; 
+      display: inline-flex; 
+      border-top-left-radius: .25rem;
+      border-top-right-radius: .25rem;
+      overflow: hidden; 
+    }
+
+    .nav-tabs .nav-link {
+      border: 1px solid transparent; 
+      color: #6c757d; 
+      font-weight: 500;
+      padding: 0.75rem 1.5rem; 
+      background-color: #e9ecef; 
+      transition: all 0.2s ease-in-out; 
+      border-radius: 0; }
+
+
+    .nav-tabs .nav-link.active {
+      color: #dc3545; 
+      border-bottom: 2px solid #dc3545; 
+      font-weight: 600;
+    }
+
+    .nav-tabs .nav-link:not(.active) {
+        border-bottom-color: #dee2e6; 
+    }
+
+    .tab-content .tab-pane {
+        padding: 1.5rem; 
+        background-color: #fff; 
+    }
+
+    .owner-cta-divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #6c757d;
+      margin: 2rem 0;
+      font-size: 0.9rem; 
+    }
+
+    .owner-cta-divider::before,
+    .owner-cta-divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px dashed #ced4da;
+    }
+
+    .owner-cta-divider:not(:empty)::before {
+      margin-right: .5em;
+    }
+
+    .owner-cta-divider:not(:empty)::after {
+      margin-left: .5em;
+    }
+
+    .search-input-group > .col-md-3,
+    .search-input-group > .col-md-6,
+    .search-input-group > .col-md-3 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .search-input-group {
+        margin-left: -0.5rem; 
+        margin-right: -0.5rem;
+    }
+
+    .search-input-group .form-control,
+    .search-input-group .form-select,
+    .search-input-group .btn {
+        height: calc(1.5em + 1.5rem + 2px); 
+    }
+
+    .filter-options-row {
+        padding-top: 1rem;
+        display: flex;
+        align-items: center; 
+        flex-wrap: wrap; 
+    }
+
+    .filter-options-row .col-md-auto,
+    .filter-options-row .col-md-2,
+    .filter-options-row .col-md-3 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    .filter-options-row .form-check-inline {
+        margin-right: 1rem; /
+    }
+
+    .rental-agreement-banner {
+        background-color: #fff8e1; 
+        border: 1px solid #ffe082; 
+        padding: 0.8rem 2rem; 
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.25rem;
+        box-shadow: 0 .0625rem .125rem rgba(0,0,0,.075);
+        margin-bottom: 2rem; 
+    }
+    .rental-agreement-banner strong {
+        color: #343a40; 
+    }
+    .rental-agreement-banner i {
+        color: #6c757d;
+    }
+    .rental-agreement-banner span {
+        color: #ced4da; 
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+    <a class="navbar-brand fw-bold text-dark" href="#">
+      <img src="logo.png" alt="NoBroker Logo" height="70" width="130" class="me-2" />
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+      aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item me-3">
+          <button class="btn btn-outline-secondary">Pay Rent</button>
+        </li>
+        <li class="nav-item me-3">
+          <button class="btn btn-success">Post Your Property</button>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="#">Sign up</a>
+        </li>
+        <li class="nav-item me-3">
+          <a class="nav-link" href="#">Log in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-list"></i> Menu</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container text-center mt-5">
+    <h2 class="fw main-heading mb-5">World's Largest NoBrokerage Property Site</h2>
+
+    <div class="rental-agreement-banner d-inline-flex align-items-center mb-5">
+      <i class="bi bi-file-earmark-text me-2"></i>
+      <strong>Rental Agreement</strong>
+      <span class="mx-3">|</span>
+      <i class="bi bi-truck me-2"></i>
+      <strong>Next Day Delivery</strong>
+    </div>
+
+    <div class="search-section-wrapper">
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist"> <li class="nav-item" role="presentation">
+                <button class="nav-link" id="buy-tab" data-bs-toggle="tab" data-bs-target="#buy-filters-content" type="button" role="tab" aria-controls="buy-filters-content" aria-selected="false">Buy</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent-filters-content" type="button" role="tab" aria-controls="rent-filters-content" aria-selected="false">Rent</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="commercial-tab" data-bs-toggle="tab" data-bs-target="#commercial-filters-content" type="button" role="tab" aria-controls="commercial-filters-content" aria-selected="true">Commercial</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+
+            <div class="tab-pane fade" id="buy-filters-content" role="tabpanel" aria-labelledby="buy-tab">
+                <div class="row g-3 search-input-group">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Bangalore</option>
+                            <option>Pune</option>
+                            <option>Mumbai</option>
+                            <option>Gurgaon</option>
+                            <option>Delhi</option>
+                            <option>Chennai</option>
+                            <option>Hyderabad</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Search upto 3 localities or landmarks" />
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-danger w-100">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center filter-options-row">
+                    <div class="col-md-auto d-flex align-items-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="buyPropertyCategory" id="buyRadioFullHouse" value="FullHouse" checked />
+                            <label class="form-check-label" for="buyRadioFullHouse">Full House</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="buyPropertyCategory" id="buyRadioLandPlot" value="Land/Plot" />
+                            <label class="form-check-label" for="buyRadioLandPlot">Land/Plot</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select">
+                            <option selected>BHK Type</option>
+                            <option>1 BHK</option>
+                            <option>2 BHK</option>
+                            <option>3 BHK</option>
+                            <option>4+ BHK</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Property Status</option>
+                            <option>Ready to Move</option>
+                            <option>Under Construction</option>
+                        </select>
+                    </div>
+                    <div class="col-md-auto">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="buyChkNewBuildingProjects" value="option1" />
+                            <label class="form-check-label" for="buyChkNewBuildingProjects">New Builder Projects</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="rent-filters-content" role="tabpanel" aria-labelledby="rent-tab">
+                <div class="row g-3 search-input-group">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Bangalore</option>
+                            <option>Pune</option>
+                            <option>Mumbai</option>
+                            <option>Gurgaon</option>
+                            <option>Delhi</option>
+                            <option>Chennai</option>
+                            <option>Hyderabad</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Search upto 3 localities or landmarks" />
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-danger w-100">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center filter-options-row">
+                    <div class="col-md-auto d-flex align-items-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rentPropertyCategory" id="rentRadioFullHouse" value="FullHouse" checked />
+                            <label class="form-check-label" for="rentRadioFullHouse">Full House</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rentPropertyCategory" id="rentRadioPGHostel" value="PG/Hostel" />
+                            <label class="form-check-label" for="rentRadioPGHostel">PG/Hostel</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="rentPropertyCategory" id="rentRadioFlatmates" value="Flatmates" />
+                            <label class="form-check-label" for="rentRadioFlatmates">Flatmates</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <select class="form-select">
+                            <option selected>BHK Type</option>
+                            <option>1 BHK</option>
+                            <option>2 BHK</option>
+                            <option>3 BHK</option>
+                            <option>4+ BHK</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select">
+                            <option selected>Availability</option>
+                            <option>Immediate</option>
+                            <option>Within 15 days</option>
+                            <option>Within 30 days</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="commercial-filters-content" role="tabpanel" aria-labelledby="commercial-tab">
+                <div class="row g-3 search-input-group">
+                    <div class="col-md-3">
+                        <select class="form-select">
+                             <option selected>Bangalore</option>
+                            <option>Pune</option>
+                            <option>Mumbai</option>
+                            <option>Gurgaon</option>
+                            <option>Delhi</option>
+                            <option>Chennai</option>
+                            <option>Hyderabad</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Search upto 3 localities or landmarks" />
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-danger w-100">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <div class="row g-3 align-items-center filter-options-row">
+                    <div class="col-md-auto d-flex align-items-center">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="commercialPropertyPurpose" id="commercialRadioRent" value="Rent" checked />
+                            <label class="form-check-label" for="commercialRadioRent">Rent</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="commercialPropertyPurpose" id="commercialRadioBuy" value="Buy" />
+                            <label class="form-check-label" for="commercialRadioBuy">Buy</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Property Type
+                            </button>
+                            <ul class="dropdown-menu w-100 px-3">
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Office-space" id="chkOfficeSpace">
+                                        <label class="form-check-label" for="chkOfficeSpace">Office-space</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Shop" id="chkShop">
+                                        <label class="form-check-label" for="chkShop">Shop</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Showroom" id="chkShowroom">
+                                        <label class="form-check-label" for="chkShowroom">Showroom</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Godown" id="chkGodown">
+                                        <label class="form-check-label" for="chkGodown">Godown</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Industrial-Building" id="chkIndustrialBuilding">
+                                        <label class="form-check-label" for="chkIndustrialBuilding">Industrial Building</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Industrial-Shed" id="chkIndustrialShed">
+                                        <label class="form-check-label" for="chkIndustrialShed">Industrial Shed</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> <div class="mt-5">
+      <p class="owner-cta-divider">Are you a Property Owner?</p>
+      <button class="btn btn-success btn-lg">Post Free Property Ad</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
