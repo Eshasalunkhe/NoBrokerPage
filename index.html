@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NoBroker Property Site</title>
+  <title>NoBroker Clone</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
@@ -13,143 +13,270 @@
     body {
       background-color: #f9f9f9;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    .navbar {
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .navbar-brand img {
+        height: 55px;
+        width: 170px;
+    }
+
+    .navbar-nav .nav-item.me-3 {
+      margin-right: 0.4rem !important;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #000;
+    }
+
+    .btn-pay-rent {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        color: #555;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        border-radius: 0.2rem;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+    }
+    .btn-pay-rent:hover {
+        background-color: #f8f8f8;
+        border-color: #ccc;
+        color: #333;
+    }
+
+    .btn-post-property {
+        background-color: #1abc9c;
+        border-color: #1abc9c;
+        color: #fff;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.8rem;
+        border-radius: 0.2rem;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+    }
+    .btn-post-property:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
     }
 
     .main-heading {
-        color: #adb5bd;
+        color: #343a40;
+        font-weight: 600;
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .combined-feature-banner {
+        background-color: #fff8e1;
+        border: 1px solid #ffe082;
+        padding: 0.6rem 2rem;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.2rem;
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        margin-bottom: 2.5rem;
+    }
+    .combined-feature-banner .feature-item-content {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #4a4a4a;
+    }
+    .combined-feature-banner .feature-item-content i {
+        color: #8c8c8c;
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+    }
+    .combined-feature-banner .separator {
+        display: inline-block;
+        width: 1px;
+        height: 1.2em;
+        background-color: #ddd;
+        margin: 0 1.2rem;
     }
 
     .search-section-wrapper {
-      max-width: 1000px; 
+      max-width: 800px;
       margin: 0 auto;
-      background-color: #fff; 
-      box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); 
-      border-radius: .25rem; 
-      overflow: hidden; 
+      background-color: #fff;
+      box-shadow: 0 .15rem .3rem rgba(0,0,0,.08);
+      border-radius: 0.2rem;
+      overflow: hidden;
+      border: 1px solid #eee;
     }
 
     .nav-tabs {
-      border-bottom: none; 
-      margin-bottom: 0; 
-      display: inline-flex; 
-      border-top-left-radius: .25rem;
-      border-top-right-radius: .25rem;
-      overflow: hidden; 
+      border-bottom: none;
+      margin-bottom: 0;
+      display: inline-flex;
+      background-color: #f7f7f7;
+      border-bottom: 1px solid #ddd;
+      padding-top: 0.4rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      border-top-left-radius: 0.2rem;
+      border-top-right-radius: 0.2rem;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,.03);
+    }
+
+    .nav-tabs .nav-item {
+        margin-bottom: -1px;
     }
 
     .nav-tabs .nav-link {
-      border: 1px solid transparent; 
-      color: #6c757d; 
-      font-weight: 500;
-      padding: 0.75rem 1.5rem; 
-      background-color: #e9ecef; 
-      transition: all 0.2s ease-in-out; 
-      border-radius: 0; }
-
-
-    .nav-tabs .nav-link.active {
-      color: #dc3545; 
-      border-bottom: 2px solid #dc3545; 
+      border: 1px solid transparent;
+      color: #6c757d;
       font-weight: 600;
+      padding: 0.3rem 1.0rem;
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      border-radius: 0.2rem 0.2rem 0 0;
+      margin-right: 0.15rem;
+      font-size: 0.9rem;
     }
 
-    .nav-tabs .nav-link:not(.active) {
-        border-bottom-color: #dee2e6; 
+    .nav-tabs .nav-link:hover:not(.active) {
+        color: #333;
+        background-color: #e9ecef;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: #fff;
+      color: #dc3545;
+      border-color: #eee;
+      border-bottom-color: #fff;
+      border-top: 2px solid #dc3545;
+      font-weight: 700;
+      z-index: 1;
+      position: relative;
+      padding-top: 0.2rem;
+    }
+    .nav-tabs .nav-link.active {
+        margin-top: -1px;
+        margin-left: -1px;
+        margin-right: -1px;
     }
 
     .tab-content .tab-pane {
-        padding: 1.5rem; 
-        background-color: #fff; 
+        padding: 1.2rem 1.5rem;
+        background-color: #fff;
+    }
+
+    .search-input-group .form-control,
+    .search-input-group .form-select {
+        height: 44px;
+        border: 1px solid #ced4da;
+        border-radius: 0.2rem;
+        font-size: 0.95rem;
+        color: #495057;
+    }
+    .search-input-group .form-control::placeholder {
+        color: #adb5bd;
+    }
+
+    .search-input-group .btn-danger {
+        height: 44px;
+        background-color: #ff3e54;
+        border-color: #ff3e54;
+        font-size: 0.95rem;
+        font-weight: 600;
+        border-radius: 0.2rem;
+    }
+    .search-input-group .btn-danger:hover {
+        background-color: #e0364c;
+        border-color: #e0364c;
+    }
+
+    .filter-options-row {
+        padding-top: 0.7rem;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+
+    .filter-options-row .form-check-inline {
+        margin-right: 1.2rem;
+        font-size: 0.85rem;
+        color: #555;
+    }
+    .filter-options-row .form-check-input {
+        margin-top: 0.25em;
+    }
+
+    .filter-options-row .form-select {
+        height: 36px;
+        font-size: 0.85rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.2rem;
+    }
+    .filter-options-row .btn-outline-secondary {
+        height: 36px;
+        font-size: 0.85rem;
+        color: #555;
+        border-color: #ced4da;
+        background-color: #fff;
+        border-radius: 0.2rem;
+    }
+    .filter-options-row .btn-outline-secondary:hover {
+        background-color: #f8f9fa;
+        color: #333;
+        border-color: #a7b7c7;
     }
 
     .owner-cta-divider {
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #6c757d;
-      margin: 2rem 0;
-      font-size: 0.9rem; 
+      color: #888;
+      margin: 3rem 0 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
     }
 
     .owner-cta-divider::before,
     .owner-cta-divider::after {
-      content: '';
-      flex: 1;
-      border-bottom: 1px dashed #ced4da;
+      border-bottom: 1px dashed #e0e0e0;
     }
 
-    .owner-cta-divider:not(:empty)::before {
-      margin-right: .5em;
+    .btn-post-free-ad {
+        background-color: #1abc9c;
+        border-color: #1abc9c;
+        font-size: 1.05rem;
+        padding: 0.6rem 2.0rem;
+        border-radius: 0.2rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,.08);
+        transition: all 0.3s ease;
+    }
+    .btn-post-free-ad:hover {
+        background-color: #17a689;
+        border-color: #17a689;
+        transform: none;
+        box-shadow: 0 3px 5px rgba(0,0,0,.1);
     }
 
-    .owner-cta-divider:not(:empty)::after {
-      margin-left: .5em;
+    .footer {
+        background-color: #34495e;
+        color: #fff;
+        padding: 1.5rem 0;
+        margin-top: 5rem;
+        font-size: 0.85rem;
     }
-
-    .search-input-group > .col-md-3,
-    .search-input-group > .col-md-6,
-    .search-input-group > .col-md-3 {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-
-    .search-input-group {
-        margin-left: -0.5rem; 
-        margin-right: -0.5rem;
-    }
-
-    .search-input-group .form-control,
-    .search-input-group .form-select,
-    .search-input-group .btn {
-        height: calc(1.5em + 1.5rem + 2px); 
-    }
-
-    .filter-options-row {
-        padding-top: 1rem;
-        display: flex;
-        align-items: center; 
-        flex-wrap: wrap; 
-    }
-
-    .filter-options-row .col-md-auto,
-    .filter-options-row .col-md-2,
-    .filter-options-row .col-md-3 {
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-    
-    .filter-options-row .form-check-inline {
-        margin-right: 1rem; /
-    }
-
-    .rental-agreement-banner {
-        background-color: #fff8e1; 
-        border: 1px solid #ffe082; 
-        padding: 0.8rem 2rem; 
-        display: inline-flex;
-        align-items: center;
-        border-radius: 0.25rem;
-        box-shadow: 0 .0625rem .125rem rgba(0,0,0,.075);
-        margin-bottom: 2rem; 
-    }
-    .rental-agreement-banner strong {
-        color: #343a40; 
-    }
-    .rental-agreement-banner i {
-        color: #6c757d;
-    }
-    .rental-agreement-banner span {
-        color: #ced4da; 
-    }
-
-
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
     <a class="navbar-brand fw-bold text-dark" href="#">
-      <img src="logo.png" alt="NoBroker Logo" height="70" width="130" class="me-2" />
+      <img src="logo1.jpg" alt="NoBroker Logo" height="40" width="130" class="me-2" />
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -160,10 +287,10 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
       <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
         <li class="nav-item me-3">
-          <button class="btn btn-outline-secondary">Pay Rent</button>
+          <button class="btn btn-pay-rent">Pay Rent</button>
         </li>
         <li class="nav-item me-3">
-          <button class="btn btn-success">Post Your Property</button>
+          <button class="btn btn-post-property">For Property Owners</button>
         </li>
         <li class="nav-item me-3">
           <a class="nav-link" href="#">Sign up</a>
@@ -179,41 +306,44 @@
   </nav>
 
   <div class="container text-center mt-5">
-    <h2 class="fw main-heading mb-5">World's Largest NoBrokerage Property Site</h2>
+    <h2 class="fw-semibold main-heading">World's Largest NoBrokerage Property Site</h2>
 
-    <div class="rental-agreement-banner d-inline-flex align-items-center mb-5">
-      <i class="bi bi-file-earmark-text me-2"></i>
-      <strong>Rental Agreement</strong>
-      <span class="mx-3">|</span>
-      <i class="bi bi-truck me-2"></i>
-      <strong>Next Day Delivery</strong>
+    <div class="combined-feature-banner">
+      <div class="feature-item-content">
+        <i class="bi bi-house-door-fill"></i>
+        <span>Home Interiors</span>
+      </div>
+      <div class="separator"></div>
+      <div class="feature-item-content">
+        <i class="bi bi-shield-fill-check"></i>
+        <span>45-Days Guarantee</span>
+      </div>
     </div>
 
     <div class="search-section-wrapper">
-        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist"> <li class="nav-item" role="presentation">
-                <button class="nav-link" id="buy-tab" data-bs-toggle="tab" data-bs-target="#buy-filters-content" type="button" role="tab" aria-controls="buy-filters-content" aria-selected="false">Buy</button>
+        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="buy-tab" data-bs-toggle="tab" data-bs-target="#buy-filters-content" type="button" role="tab" aria-controls="buy-filters-content" aria-selected="true">Buy</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent-filters-content" type="button" role="tab" aria-controls="rent-filters-content" aria-selected="false">Rent</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="commercial-tab" data-bs-toggle="tab" data-bs-target="#commercial-filters-content" type="button" role="tab" aria-controls="commercial-filters-content" aria-selected="true">Commercial</button>
+                <button class="nav-link" id="commercial-tab" data-bs-toggle="tab" data-bs-target="#commercial-filters-content" type="button" role="tab" aria-controls="commercial-filters-content" aria-selected="false">Commercial</button>
             </li>
         </ul>
 
         <div class="tab-content" id="myTabContent">
 
-            <div class="tab-pane fade" id="buy-filters-content" role="tabpanel" aria-labelledby="buy-tab">
+            <div class="tab-pane fade show active" id="buy-filters-content" role="tabpanel" aria-labelledby="buy-tab">
                 <div class="row g-3 search-input-group">
                     <div class="col-md-3">
                         <select class="form-select">
                             <option selected>Bangalore</option>
                             <option>Pune</option>
                             <option>Mumbai</option>
-                            <option>Gurgaon</option>
-                            <option>Delhi</option>
-                            <option>Chennai</option>
-                            <option>Hyderabad</option>
+                            <option>Nashik</option>
+                            <option>Akola</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -268,10 +398,8 @@
                             <option selected>Bangalore</option>
                             <option>Pune</option>
                             <option>Mumbai</option>
-                            <option>Gurgaon</option>
-                            <option>Delhi</option>
-                            <option>Chennai</option>
-                            <option>Hyderabad</option>
+                            <option>Nashik</option>
+                            <option>Akola</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -318,17 +446,15 @@
                 </div>
             </div>
 
-            <div class="tab-pane fade show active" id="commercial-filters-content" role="tabpanel" aria-labelledby="commercial-tab">
+            <div class="tab-pane fade" id="commercial-filters-content" role="tabpanel" aria-labelledby="commercial-tab">
                 <div class="row g-3 search-input-group">
                     <div class="col-md-3">
                         <select class="form-select">
-                             <option selected>Bangalore</option>
+                            <option selected>Bangalore</option>
                             <option>Pune</option>
                             <option>Mumbai</option>
-                            <option>Gurgaon</option>
-                            <option>Delhi</option>
-                            <option>Chennai</option>
-                            <option>Hyderabad</option>
+                            <option>Nashik</option>
+                            <option>Akola</option>
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -399,11 +525,18 @@
                 </div>
             </div>
 
-        </div> </div> <div class="mt-5">
+        </div>
+    </div>
+
+    <div class="mt-5">
       <p class="owner-cta-divider">Are you a Property Owner?</p>
-      <button class="btn btn-success btn-lg">Post Free Property Ad</button>
+      <button class="btn btn-success btn-lg btn-post-free-ad">Post Free Property Ad</button>
     </div>
   </div>
+
+  <footer class="footer text-center">
+    &copy; 2023 NoBroker. All rights reserved.
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
