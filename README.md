@@ -4,6 +4,9 @@ This project is a static front-end replica of the NoBroker.com homepage, created
 
 https://eshasalunkhe.github.io/NoBrokerPage/
 
+![image](https://github.com/user-attachments/assets/20451fc6-9191-46a7-b9ac-d76e85a5060f)
+
+
 ## 📌 Project Highlights
 
 - Replicates key sections of the NoBroker homepage including:
